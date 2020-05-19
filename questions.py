@@ -4,11 +4,12 @@ import json
 
 class Questions:
 
-    def __init__(self, content='', good_ans='', wrong_ans=['']):
+    def __init__(self, content='', good_ans='', wrong_ans=None):
         self.id = None
         self.content = content
         self.good_ans = good_ans
-        self.wrong_ans = wrong_ans
+        if not wrong_ans:
+            self.wrong_ans = ['']
 
         self.question = {self.content: [self.good_ans]+self.wrong_ans}
 

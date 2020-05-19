@@ -31,9 +31,9 @@ class Questions:
         return self.question
 
     def convert_to_json(self):
-        str = ''' "id": {} "content": {} "good_ans": {} "wrong_ans": {}'''\
+        jstr = ''' "id": {} "content": {} "good_ans": {} "wrong_ans": {}'''\
             .format(self.id, self.content, self.good_ans, self.wrong_ans)
-        json_str = json.dumps(str)
+        json_str = json.dumps(jstr)
         return json_str
 
     def save_question_to_file(self):

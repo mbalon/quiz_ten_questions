@@ -31,14 +31,19 @@ class Questions:
 
         return self.question
 
-    def convert_to_json(self):
-        jstr = ''' "id": {} "content": {} "good_ans": {} "wrong_ans": {}'''\
-            .format(self.id, self.content, self.good_ans, self.wrong_ans)
-        json_str = json.dumps(jstr)
-        return json_str
+    def convert_to_dict(self):
+        question_dict = {"id": self.id, "content": self.content, "good_ans": self.good_ans, "wrong_ans": self.wrong_ans}
+        return question_dict
 
-    def save_question_to_file(self):
-        pass
+    def save_question_to_file(self, path):
+        with open(path, 'r') as file:
+            content = json.load(file)
+
+        content['questions'].append(self.convert_to_dict())
+
+        with open(path, 'w') as file:
+            json.dump(content, file)
+        return
 
     def load(self):
         pass

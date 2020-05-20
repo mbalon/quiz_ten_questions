@@ -45,8 +45,10 @@ class Questions:
             json.dump(content, file)
         return
 
-    def load(self):
-        pass
+    @staticmethod
+    def load_from_file(path):
+        with open(path, 'r') as file:
+            return json.load(file)
 
     def display(self):
         pass

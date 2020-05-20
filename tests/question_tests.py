@@ -74,4 +74,17 @@ def test_save_question_to_file_2():
     assert quest_test.convert_to_dict() in content['questions']
 
 
+def test_load_from_file():
+    quest_test = questions.Questions()
+    quest_test.id = '1'
+    quest_test.content = 'Q'
+    quest_test.good_ans = 'ans_g'
+    quest_test.wrong_ans = ['ans_w1', 'ans_w2', 'ans_w3']
+    path = 'c:/temp/question_file.json'
+
+    output = quest_test.load_from_file(path)
+
+    with open(path, 'r') as file:
+        assert output == json.load(file)
+
 

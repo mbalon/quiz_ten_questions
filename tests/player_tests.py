@@ -1,5 +1,6 @@
 from quiz_ten_questions import player
 
+
 def test_get_player_name():
     player_test = player.Player('Adam', '0')
 

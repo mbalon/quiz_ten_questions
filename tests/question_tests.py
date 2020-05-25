@@ -1,5 +1,5 @@
 import json
-import questions
+from quiz_ten_questions import questions
 import os
 
 

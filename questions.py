@@ -36,8 +36,7 @@ class Questions:
         return question_dict
 
     def save_question_to_file(self, path):
-        with open(path, 'r') as file:
-            content = json.load(file)
+        content = self.load_from_file(path)
 
         content['questions'].append(self.convert_to_dict())
 

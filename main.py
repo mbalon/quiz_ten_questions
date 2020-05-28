@@ -3,16 +3,33 @@ from quiz_ten_questions import utils
 from quiz_ten_questions import player
 from quiz_ten_questions import gameplay
 
-if __name__ == 'main':
-    utils.welcome_message()
-    ans = input()
-    # TODO: Add admin mode here
+utils.welcome_message()
 
-    # TODO: create or load player
+# TODO: Add admin mode here
 
-    # TODO: choose questions from base
+ans = input('''1 - start new game
+2 - load game ''')
+if ans == '1':
+    name = input("Enter your name")
+    player = player.Player(name)
+elif ans == '2':
+    players = player.Player.load_players()
+    player_1 = player.Player()
+    players_list = []
 
-    # TODO: Display question
+    for item in players:
+        player_1.parse_json_str(item)
+        players_list.append(player_1)
+        print(player_1)
+    ans = input("Enter id: ")
+    player_1 = player.Player.choose_player(ans, players_list)
+    print(player_1)
+else:
+    print("Please enter proper value (1 or 2)")
+
+# TODO: choose questions from base
+
+# TODO: Display question
 
 
 

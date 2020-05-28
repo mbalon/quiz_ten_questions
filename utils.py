@@ -8,3 +8,5 @@ def welcome_message():
     less than 0 points
     Are you ready?
     ''')
+
+# TODO: Add 50:50 option

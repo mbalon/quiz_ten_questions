@@ -1,7 +1,12 @@
+import uuid
+import pickle
+
+
 class Player:
     def __init__(self, name='unknown_player', score=0):
         self.name = name
         self.score = score
+        self.id = uuid.uuid4()
 
     def get_player_name(self):
         return self.name
@@ -17,6 +22,13 @@ class Player:
 
     def add_to_score(self, points):
         self.score += points
+
+    def save_player(self):
+        path = r'C:\temp\players.txt'
+        with open(path, 'wb') as file:
+            pickle.dump(self, file)
+
+
 
 
 

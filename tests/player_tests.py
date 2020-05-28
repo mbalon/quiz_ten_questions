@@ -1,4 +1,5 @@
 from quiz_ten_questions import player
+import pickle
 
 
 def test_get_player_name_1():
@@ -63,3 +64,12 @@ def test_set_player_score_2():
     player_test.set_player_score(8)
 
     assert player_test.score == 8
+
+
+def test_add_to_score_1():
+    player_test = player.Player('Maciek', 20)
+
+    player_test.add_to_score(5)
+
+    assert player_test.score == 25
+

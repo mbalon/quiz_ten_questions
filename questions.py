@@ -1,5 +1,6 @@
 import uuid
 import json
+import random
 
 
 class Questions:
@@ -50,4 +51,10 @@ class Questions:
             return json.load(file)
 
     def display(self):
-        pass
+        answers = [self.good_ans] + self.wrong_ans
+        random.shuffle(answers)
+        print(
+            f'''{self.content}
+1. {answers[0]} \t 2. {answers[1]}
+3. {answers[2]} \t 4. {answers[3]}'''
+        )

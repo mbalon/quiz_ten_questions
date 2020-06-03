@@ -24,7 +24,7 @@ class Questions:
         return new_record
 
     def create(self, new_record):
-        self.id = uuid.uuid4()
+        self.id = str(uuid.uuid4())
         self.content = new_record[0]
         self.good_ans = new_record[1]
         self.wrong_ans = new_record[2:]

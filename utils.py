@@ -27,6 +27,7 @@ def load_game():
     ans = input("Enter id: ")
     return player.Player.choose_player(ans, players_list)
 
+
 def choose_questions():
     path = 'c:/temp/question_file.json'
     file_content = questions.Questions.load_from_file(path)

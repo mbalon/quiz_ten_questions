@@ -59,6 +59,12 @@ class Player:
             if str(player.id) == str(id):
                 return player
 
+    def add_points(self, is_good):
+        if is_good:
+            self.score += 2
+        else:
+            self.score -= 1
+
 
 
 

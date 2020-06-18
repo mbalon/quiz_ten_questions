@@ -64,3 +64,6 @@ class Questions:
 1. {answers[0]} \t 2. {answers[1]}
 3. {answers[2]} \t 4. {answers[3]}'''
         )
+
+    def check_answer(self, answer):
+        return answer == self.good_ans

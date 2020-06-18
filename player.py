@@ -9,6 +9,9 @@ class Player:
         self.score = score
         self.id = uuid.uuid4()
 
+    def __str__(self):
+        return f'id: {self.id}, name: {self.name}, score: {self.score}'
+
     def __repr__(self):
         return f'id: {self.id}, name: {self.name}, score: {self.score}'
 
@@ -53,7 +56,7 @@ class Player:
     @staticmethod
     def choose_player(id, players_list):
         for player in players_list:
-            if player.id == id:
+            if str(player.id) == str(id):
                 return player
 
 

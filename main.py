@@ -13,16 +13,16 @@ ans = input('''1 - start new game
 if ans == '1':
     name = input("Enter your name")
     player = player.Player(name)
+    player.save_player()
 elif ans == '2':
     player_1 = utils.load_game()
-    print(player_1)
+    player = player_1
+    print(player)
 else:
     print("Please enter proper value (1 or 2)")
 
 questions_list = utils.choose_questions()
-
-
-# TODO: Display question
+print(questions_list)
 
 
 

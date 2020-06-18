@@ -32,6 +32,12 @@ class Questions:
 
         return self.question
 
+    def convert_from_dict_to_instance(self, dict):
+        dict['id'] = self.id
+        dict['content'] = self.content
+        dict['good_ans'] = self.good_ans
+        dict['wrong_ans'] = self.wrong_ans
+
     def convert_to_dict(self):
         question_dict = {"id": self.id, "content": self.content, "good_ans": self.good_ans, "wrong_ans": self.wrong_ans}
         return question_dict

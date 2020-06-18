@@ -1,4 +1,3 @@
-import random
 from quiz_ten_questions import questions
 from quiz_ten_questions import utils
 from quiz_ten_questions import player
@@ -22,7 +21,13 @@ else:
     print("Please enter proper value (1 or 2)")
 
 questions_list = utils.choose_questions()
-print(questions_list)
 
+question = questions.Questions()
 
-
+for item in questions_list:
+    question.convert_from_dict_to_instance(item)
+    question.display()
+    ans = gameplay.ask_for_answer()
+    is_good = question.check_answer(ans)
+    player.add_to_score(is_good)
+player.save_player()

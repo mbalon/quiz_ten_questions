@@ -30,6 +30,7 @@ class Player:
     def add_to_score(self, points):
         self.score += points
 
+    # TODO: Fix func to overwrite players with the same id
     def save_player(self):
         path = r'C:\temp\players.txt'
         content = Player.load_players()
@@ -46,6 +47,8 @@ class Player:
                 return pickle.load(file)
         except EOFError:
             return []
+
+    # TODO: add delete player from file
 
     def parse_json_str(self, j_string):
         content = json.loads(j_string)
